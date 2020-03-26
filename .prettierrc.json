@@ -1,0 +1,22 @@
+{
+  "jsxSingleQuote": true,
+  "printWidth": 150,
+  "tabWidth": 2,
+  "semi": false,
+  "singleQuote": true,
+  "trailingComma": "es5",
+  "overrides": [
+    {
+      "files": ".prettierrc",
+      "options": {
+        "parser": "json"
+      }
+    },
+    {
+      "files": "*.{ts,tsx}",
+      "options": {
+        "semi": true
+      }
+    }
+  ]
+}
