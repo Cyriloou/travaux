@@ -12,9 +12,13 @@ import Default from 'Pages/Default'
 const SwitchRoutes = () => (
   <Switch>
     {/*Use the exact keyword means it will direct to that exact route, and used primarily when creating sub routes. */}
-    <Route exact path='/' component={Home} />
-    <Route exact path='/search' component={Home} />
-    <Route exact path='/test/:brand' component={Home} />
+    <Route exact path='/newest' component={Home} />
+    <Route exact path='/front' component={Home} />
+    <Route exact path='/newcomments/:brand' component={Home} />
+    <Route exact path='/ask' component={Home} />
+    <Route exact path='/show' component={Home} />
+    <Route exact path='/jobs' component={Home} />
+    <Route exact path='/submit' component={Home} />
 
     <Route component={Default} />
   </Switch>
