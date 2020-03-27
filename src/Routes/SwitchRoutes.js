@@ -13,13 +13,8 @@ const SwitchRoutes = () => (
   <Switch>
     <Route exact path='/' component={Home} />
     {/*Use the exact keyword means it will direct to that exact route, and used primarily when creating sub routes. */}
+
     <Route exact path='/:itemType' component={Home} />
-    {/* <Route exact path='/front' component={Home} />
-    <Route exact path='/newcomments/:brand' component={Home} />
-    <Route exact path='/ask' component={Home} />
-    <Route exact path='/show' component={Home} />
-    <Route exact path='/jobs' component={Home} /> */}
-    {/* <Route exact path='/submit' component={Home} /> */}
 
     <Route component={Default} />
   </Switch>

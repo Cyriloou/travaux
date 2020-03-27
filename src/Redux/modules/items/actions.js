@@ -3,7 +3,7 @@
  */
 import * as types from './types'
 import axios from 'axios'
-const MAX_QTY = 30
+
 const DEFAULT_PATH = 'newstories'
 const onError = error => ({ type: types.ERROR_GENERATED, error })
 
@@ -11,16 +11,19 @@ function getItems(id) {
   return axios.get(`/item/${id}.json`)
 }
 
-export const fetchDetails = itemType => (dispatch, getState) => {
+// Fetch detail from a categorie of items
+// Fetch 2 pages in advance
+export const fetchDetails = (itemType, perPage) => (dispatch, getState) => {
   const state = getState()
   const ids = itemType ? state.items.list[itemType] : state.items.list[DEFAULT_PATH]
   if (!ids || ids.length <= 0) return
   const start = state.items.details[itemType || DEFAULT_PATH]
     ? state.items.details[itemType || DEFAULT_PATH].length
     : 0
+  // dont fetch if everything is fetched
   if (start >= ids.length) return
   axios
-    .all(ids.slice(start, start + MAX_QTY).map(id => getItems(id)))
+    .all(ids.slice(start, start + perPage * 2).map(id => getItems(id)))
     .then(
       axios.spread((...responses) => {
         responses = responses.map(response => response.data)
