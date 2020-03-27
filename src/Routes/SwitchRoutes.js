@@ -5,20 +5,21 @@ import React from 'react'
 // Switch responsible for directing to first child that matches thier respective route.
 import { Switch, Route } from 'react-router-dom'
 // Now import the components you'll pass as props.
-import Home from 'Pages/Home'
+import Home from 'Pages/Home/Home'
 import Default from 'Pages/Default'
 
 // When dealing with default exports we do not even need to name the export since when it is imported we can name it whatever we want.
 const SwitchRoutes = () => (
   <Switch>
+    <Route exact path='/' component={Home} />
     {/*Use the exact keyword means it will direct to that exact route, and used primarily when creating sub routes. */}
-    <Route exact path='/newest' component={Home} />
-    <Route exact path='/front' component={Home} />
+    <Route exact path='/:itemType' component={Home} />
+    {/* <Route exact path='/front' component={Home} />
     <Route exact path='/newcomments/:brand' component={Home} />
     <Route exact path='/ask' component={Home} />
     <Route exact path='/show' component={Home} />
-    <Route exact path='/jobs' component={Home} />
-    <Route exact path='/submit' component={Home} />
+    <Route exact path='/jobs' component={Home} /> */}
+    {/* <Route exact path='/submit' component={Home} /> */}
 
     <Route component={Default} />
   </Switch>
