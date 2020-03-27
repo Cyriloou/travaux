@@ -12,9 +12,12 @@
     "immutable": "^4.0.0-rc.12",
     "lodash": "^4.17.15",
     "moment": "^2.24.0",
+    "psl": "^1.8.0",
     "react": "^16.13.1",
     "react-bootstrap": "^1.0.0",
     "react-dom": "^16.13.1",
+    "react-loading-overlay": "^1.0.1",
+    "react-paginate": "^6.3.2",
     "react-redux": "^7.2.0",
     "react-redux-toastr": "^7.6.4",
     "react-router-dom": "^5.1.2",
@@ -27,6 +30,7 @@
     "nodemon": "^1.19.1",
     "prettier": "^1.18.2"
   },
+  "proxy": "https://hacker-news.firebaseio.com/v0/",
   "scripts": {
     "format": "prettier --write \"src/**/*.js\"",
     "start": "react-scripts start",
